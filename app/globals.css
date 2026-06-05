@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Scheherazade+New:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-dark: #9A7B2C;
+  --beige: #F5EDD8;
+  --beige-dark: #EDE0C4;
+  --cream: #FDFAF3;
+  --green-dark: #1B3A2D;
+  --green-mid: #2C5440;
+  --green-light: #3D7055;
+  --text-dark: #1A1A1A;
+  --text-muted: #5C5C5C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Scheherazade New', 'Amiri', serif;
+  background-color: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* Islamic geometric pattern background */
+.pattern-bg {
+  background-color: var(--green-dark);
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(201,168,76,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(201,168,76,0.08) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='rgba(201,168,76,0.15)' stroke-width='0.5'%3E%3Cpolygon points='40,5 75,27.5 75,52.5 40,75 5,52.5 5,27.5'/%3E%3Cpolygon points='40,15 65,30 65,50 40,65 15,50 15,30'/%3E%3Cline x1='40' y1='5' x2='40' y2='15'/%3E%3Cline x1='75' y1='27.5' x2='65' y2='30'/%3E%3Cline x1='75' y1='52.5' x2='65' y2='50'/%3E%3Cline x1='40' y1='75' x2='40' y2='65'/%3E%3Cline x1='5' y1='52.5' x2='15' y2='50'/%3E%3Cline x1='5' y1='27.5' x2='15' y2='30'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.pattern-light {
+  background-color: var(--beige);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg fill='none' stroke='rgba(201,168,76,0.2)' stroke-width='0.5'%3E%3Cpolygon points='30,3 57,18 57,42 30,57 3,42 3,18'/%3E%3Cpolygon points='30,12 48,22 48,38 30,48 12,38 12,22'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.gold-border {
+  border: 1px solid var(--gold);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.section-divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto;
+}
+
+.arabic-card {
+  background: white;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(27,58,45,0.08);
+  transition: all 0.3s ease;
+}
+
+.arabic-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 8px 30px rgba(27,58,45,0.15);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-family: 'Scheherazade New', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(201,168,76,0.3);
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  box-shadow: 0 6px 20px rgba(201,168,76,0.4);
+  transform: translateY(-1px);
+}
+
+.btn-green {
+  background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-family: 'Scheherazade New', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-green:hover {
+  background: linear-gradient(135deg, var(--green-mid), var(--green-light));
+  transform: translateY(-1px);
+}
+
+.bismillah-text {
+  font-family: 'Scheherazade New', serif;
+  font-size: 2.5rem;
+  color: var(--gold);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.quran-text {
+  font-family: 'Scheherazade New', serif;
+  font-size: 1.8rem;
+  line-height: 2.2;
+  color: var(--green-dark);
+  text-align: center;
+}
+
+.counter-ring {
+  stroke-dasharray: 251.2;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,0.3); }
+  50% { box-shadow: 0 0 40px rgba(201,168,76,0.6); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+.glow-animation {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--beige);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+/* Nav */
+.nav-link {
+  color: rgba(255,255,255,0.85);
+  transition: color 0.2s;
+  font-size: 1rem;
+}
+.nav-link:hover {
+  color: var(--gold-light);
+}
